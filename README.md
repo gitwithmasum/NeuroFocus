@@ -134,15 +134,6 @@ Press **`F5`** inside VS Code to launch the **Extension Development Host** and t
 
 ---
 
-## 👤 Author & Maintainer
-
-**Masum Billah**  
-- GitHub: [@gitwithmasum](https://github.com/gitwithmasum)  
-- Email: [sciencefiction844@gmail.com](mailto:sciencefiction844@gmail.com)  
-- Repository: [https://github.com/gitwithmasum/NeuroFocus](https://github.com/gitwithmasum/NeuroFocus)
-
----
-
 <div align="center">
   <sub>Engineered for deep work. Protect your cognitive bandwidth.</sub>
 </div>
