@@ -4,10 +4,10 @@
 
 <br/><br/>
 
-<img src="./assets/icon.png" alt="NeuroFocus Logo" width="140" height="140" style="border-radius: 24px; box-shadow: 0 0 35px rgba(0, 240, 255, 0.4);" />
+<img src="./assets/icon.png" alt="NeuroFocus Logo" width="160" height="160" style="border-radius: 32px; box-shadow: 0 0 50px rgba(0, 240, 255, 0.6); border: 2px solid rgba(0, 240, 255, 0.5);" />
 
-# 🧠 NEUROFOCUS
-### `[CYBERNETIC DEEP FOCUS & ADHD CODE DIMMER FOR VS CODE]`
+# NEUROFOCUS
+### `// CYBERNETIC DEEP FOCUS & ADHD CODE DIMMER FOR VS CODE //`
 
 **Illuminates your active code function while fading surrounding visual noise into deep space.**
 
