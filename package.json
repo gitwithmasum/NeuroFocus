@@ -1,0 +1,170 @@
+{
+  "name": "neuro-focus",
+  "displayName": "NeuroFocus // ADHD & Deep Focus Code Dimmer",
+  "description": "Futuristic ADHD & deep-focus code dimmer. Illuminates your active function while fading surrounding visual noise into cyber-space.",
+  "version": "0.1.0",
+  "publisher": "gitwithmasum",
+  "author": {
+    "name": "Masum Billah",
+    "email": "sciencefiction844@gmail.com",
+    "url": "https://github.com/gitwithmasum"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gitwithmasum/NeuroFocus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gitwithmasum/NeuroFocus/issues"
+  },
+  "homepage": "https://github.com/gitwithmasum/NeuroFocus#readme",
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#040714",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Themes",
+    "Productivity"
+  ],
+  "keywords": [
+    "adhd",
+    "focus",
+    "dimmer",
+    "productivity",
+    "tunnel vision",
+    "spotlight",
+    "cyberpunk",
+    "minimal",
+    "zen",
+    "neuro"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "neurofocus.toggle",
+        "title": "NeuroFocus: Toggle Deep Focus Dimmer",
+        "category": "NeuroFocus",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "neurofocus.cycleMode",
+        "title": "NeuroFocus: Switch Focus Mode (Function / Block / Radius)",
+        "category": "NeuroFocus"
+      },
+      {
+        "command": "neurofocus.increaseDimming",
+        "title": "NeuroFocus: Deepen Dimming (Darker Background)",
+        "category": "NeuroFocus"
+      },
+      {
+        "command": "neurofocus.decreaseDimming",
+        "title": "NeuroFocus: Soften Dimming (Brighter Background)",
+        "category": "NeuroFocus"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "neurofocus.toggle",
+        "key": "alt+n",
+        "mac": "alt+n"
+      },
+      {
+        "command": "neurofocus.cycleMode",
+        "key": "alt+shift+n",
+        "mac": "alt+shift+n"
+      }
+    ],
+    "configuration": {
+      "title": "NeuroFocus",
+      "properties": {
+        "neurofocus.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable NeuroFocus code dimming."
+        },
+        "neurofocus.opacity": {
+          "type": "number",
+          "default": 0.25,
+          "minimum": 0.05,
+          "maximum": 0.75,
+          "description": "Opacity of the dimmed surrounding code (lower is darker/more focused, default: 0.25)."
+        },
+        "neurofocus.focusMode": {
+          "type": "string",
+          "enum": [
+            "function",
+            "block",
+            "radius"
+          ],
+          "enumDescriptions": [
+            "Focuses strictly on the active function, method, or class.",
+            "Focuses on the innermost enclosing bracket block { ... }.",
+            "Focuses on a fixed radius of lines surrounding the cursor."
+          ],
+          "default": "function",
+          "description": "Algorithm used to calculate the active focus scope."
+        },
+        "neurofocus.radiusLines": {
+          "type": "integer",
+          "default": 6,
+          "minimum": 2,
+          "maximum": 30,
+          "description": "Number of lines above and below cursor to keep illuminated when in Radius Mode."
+        },
+        "neurofocus.enableActiveGlow": {
+          "type": "boolean",
+          "default": true,
+          "description": "Display a subtle futuristic neon aura border around the illuminated block."
+        },
+        "neurofocus.glowColor": {
+          "type": "string",
+          "enum": [
+            "cyan",
+            "magenta",
+            "violet",
+            "matrixGreen",
+            "minimal"
+          ],
+          "default": "cyan",
+          "description": "Color theme for the active focus block border and aura."
+        },
+        "neurofocus.excludedLanguages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "markdown",
+            "plaintext"
+          ],
+          "description": "List of languages where NeuroFocus should automatically stand down."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "build:dev": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap",
+    "package": "vsce package",
+    "test": "node tests/scopeDetector.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.3"
+  }
+}
